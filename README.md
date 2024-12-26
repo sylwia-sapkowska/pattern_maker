@@ -1,7 +1,6 @@
 This project is aimed to make a PDF cross stitch pattern from an image.
 
-<<<<<<< HEAD
-To run it, copy the repo and run command: python3 app.py 
+To run it, copy the repo and simply run command: python3 app.py 
 The instructions will appear in your browser.
 
 App:
@@ -12,9 +11,8 @@ App:
 Examples of algoritm in practice:
 
 (./examples/butterfly.jpg)
-=======
+
 ![Butterfly](./examples/butterfly.jpg)
->>>>>>> 020602b2a3a4b46ab0d3aa63c9bfa050d8100232
 
 Created pixel art (in the process of transforming into cross stitch pattern) without dither:
 

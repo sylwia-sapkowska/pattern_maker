@@ -78,7 +78,7 @@ def create_page(image, upXcoord = 0, upYcoord = 0):
     return pattern
 
 # Creates pdf from the chart
-def create_pdf(image, pattern, output_name="cross_stitch_pattern.pdf"):
+def create_pdf(image, pattern, output_path):
     height, width, _ = pattern.shape
 
     page_width = 70 #in number of stitches
@@ -88,7 +88,7 @@ def create_pdf(image, pattern, output_name="cross_stitch_pattern.pdf"):
     if not os.path.isdir('tmp'):
         os.makedirs('tmp')
 
-    pdf = SimpleDocTemplate(output_name, pagesize=(1000, 1370))
+    pdf = SimpleDocTemplate(output_path, pagesize=(1000, 1370))
     story = []
     story.append(Paragraph('Cross Stitch Pattern'))
 
@@ -102,8 +102,6 @@ def create_pdf(image, pattern, output_name="cross_stitch_pattern.pdf"):
     story.append(Spacer(width=0, height=20))
     story.append(ImagePDF('tmp/pattern.jpg', width=W*ratio, height=H*ratio))
 
-    
-
     for j in range(0, height, page_height):
         for i in range(0, width, page_width):
             cropped_img = pattern[j:min(j+page_height, height), i:min(i+page_width, width)]
@@ -116,5 +114,5 @@ def create_pdf(image, pattern, output_name="cross_stitch_pattern.pdf"):
     pdf.build(story)
     shutil.rmtree('tmp')
     
-    print("PDF succesfully created.")
+    # print("PDF succesfully created.")
     

@@ -4,13 +4,12 @@ To run it, copy the repo and simply run command: python3 app.py
 The instructions will appear in your browser.
 
 App:
-(./examples/homepage.png)
 
-{./examples/additional_data.png}
+[!Homepage](./examples/homepage.png)
+
+[!Dataform](./examples/additional_data.png)
 
 Examples of algoritm in practice:
-
-(./examples/butterfly.jpg)
 
 ![Butterfly](./examples/butterfly.jpg)
 

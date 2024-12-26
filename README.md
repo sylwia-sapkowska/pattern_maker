@@ -5,9 +5,9 @@ The instructions will appear in your browser.
 
 App:
 
-[!Homepage](./examples/homepage.png)
+![Homepage](./examples/homepage.png)
 
-[!Dataform](./examples/additional_data.png)
+![Dataform](./examples/additional_data.png)
 
 Examples of algoritm in practice:
 

@@ -18,7 +18,7 @@ class Pixel:
         return secondary is None or (main is not None and main != secondary)
 
 Coordinate: TypeAlias = tuple[int, int]
-Image: TypeAlias = Any # TODO: Replace with actual image type.
+ImageType: TypeAlias = Any # TODO: Replace with actual image type.
 class BackStitch:
     def __init__(self, color: Color, start: Coordinate, end: Coordinate):
         if start == end:
@@ -44,9 +44,9 @@ class Grid:
 class ConverterConfig:
     def __init__(self, width: int, height: int | None = None, 
                  palette: Palette = DMC, num_colors: int = DEFAULT_NUM_COLORS, 
-                 function_to_process_image: Callable[[Image, Self], Grid] = KMeansColorQuantization,
+                 function_to_process_image: Callable[[ImageType, Self], Grid] = KMeansColorQuantization,
                  include_blends: bool = False,
-                 function_to_add_backstitch: Callable[[Image, Grid], None] | None = None):
+                 function_to_add_backstitch: Callable[[ImageType, Grid], None] | None = None):
         self.width = width
         self.height = height
         self.palette : Palette = palette
@@ -61,8 +61,8 @@ class ConverterConfig:
             aspect_ratio = original_height / original_width
             self.height = int(self.width * aspect_ratio)
 
-class ImageToGridConverter:
-    def __init__(self, image: Image, config: ConverterConfig = None):
+class ImageTypeToGridConverter:
+    def __init__(self, image: ImageType, config: ConverterConfig = None):
         self.initial_image = image
         
         # If no config is provided, use default settings.
